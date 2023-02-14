@@ -65,6 +65,7 @@ const cardTemplate = (urlImg, titulo, nombre, link, precio, descuento) => {
 
 let htmlTemplate = "<div class='d-flex'>";
 
+//n veces la cantidad de elementos que hay mi array o vector
 productosVenta.map((element) => {
   const { url, nombre, descripcion, precio, descuento, monto_descuento } =
     element;
@@ -81,3 +82,45 @@ productosVenta.map((element) => {
 htmlTemplate += "</div>";
 
 divApp.innerHTML = htmlTemplate;
+
+const carrito = [
+  {
+    descripcion: "Napolitana",
+    precio: 1450,
+  },
+  { descripcion: "Muza", precio: 1200 },
+];
+
+const personas = [
+  {
+    nombre: "persona1",
+    edad: 18,
+    esMayor: null,
+  },
+  {
+    nombre: "persona2",
+    edad: 15,
+    esMayor: null,
+  },
+  {
+    nombre: "persona3",
+    edad: 12,
+    esMayor: null,
+  },
+];
+
+personas.forEach((persona) => {
+  if (persona.edad >= 18) {
+    persona.esMayor = true;
+  } else {
+    persona.esMayor = false;
+  }
+});
+
+//Los indices de los arrays van desde 0 hasta n - 1 dónde n es igual a la cantidad de elementos
+//que tiene un array (length)
+//la longitud de un array está dada por la cantidad de elementos del mismo
+for (let index = 0; index < personas.length; index++) {
+  const persona = personas[index];
+  console.log(persona);
+}
