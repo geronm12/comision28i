@@ -68,3 +68,8 @@ empleado.empresa = "mc-donalds";
 
 empleado["nombre"] = "geronimo";
 empleado["empresa"] = "mc-donalds";
+
+
+let lista = [{
+  
+}];

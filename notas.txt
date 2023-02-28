@@ -1,0 +1,6 @@
+CRUD: 
+
+- Create (Crear registro o documento en base de datos)
+- Read (leer)
+- Update (modificar)
+- D (borrar documento o registro de la base de datos)

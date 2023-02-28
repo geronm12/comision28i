@@ -7,6 +7,7 @@ const productosVenta = [
     url: "imagen",
     descuento: false,
     monto_descuento: null,
+    stock: 10,
   },
   {
     nombre: "Fifa 23",
@@ -15,6 +16,7 @@ const productosVenta = [
     url: "imagen",
     descuento: true,
     monto_descuento: 30,
+    stock: 0,
   },
   {
     nombre: "Dead Space Remake",
@@ -23,6 +25,7 @@ const productosVenta = [
     url: "imagen",
     descuento: false,
     monto_descuento: null,
+    stock: 10,
   },
   {
     nombre: "Elden Ring",
@@ -31,6 +34,7 @@ const productosVenta = [
     url: "imagen",
     descuento: true,
     monto_descuento: 20,
+    stock: 10,
   },
   {
     nombre: "Resident Evil 2 Remake",
@@ -39,6 +43,7 @@ const productosVenta = [
     url: "imagen",
     descuento: false,
     monto_descuento: null,
+    stock: 10,
   },
 ];
 //#endregion
@@ -63,20 +68,30 @@ const cardTemplate = (urlImg, titulo, nombre, link, precio, descuento) => {
     </div>`;
 };
 
-let htmlTemplate = "<div class='d-flex'>";
+var htmlTemplate = "<div class='d-flex'>";
 
 //n veces la cantidad de elementos que hay mi array o vector
 productosVenta.map((element) => {
-  const { url, nombre, descripcion, precio, descuento, monto_descuento } =
-    element;
-  htmlTemplate += cardTemplate(
+  const {
     url,
     nombre,
     descripcion,
-    "",
     precio,
-    descuento ? monto_descuento : ""
-  );
+    descuento,
+    monto_descuento,
+    stock,
+  } = element;
+  console.log(stock);
+  if (stock > 0) {
+    htmlTemplate += cardTemplate(
+      url,
+      nombre,
+      descripcion,
+      "./detalle.html",
+      precio,
+      descuento ? monto_descuento : ""
+    );
+  }
 });
 
 htmlTemplate += "</div>";
