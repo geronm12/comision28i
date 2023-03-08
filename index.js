@@ -1,29 +1,19 @@
-const btnMas = document.getElementById("mas");
-const btnMenos = document.getElementById("menos");
-const h1 = document.getElementById("titulo");
+import { Contador, ContadorResta } from "./contador.js";
+import { btnMas, btnMenos, h1 } from "./elements_html.js";
+import { contador } from "./objetos.js";
 
-let number = 0;
-let contadorPersona = {
-  veces: 0,
-};
+//pasa los parametros de las funcines por value
+
 btnMas.addEventListener("click", () => {
-  Contador(contadorPersona);
+  Contador(contador);
   Refresh();
 });
 
 btnMenos.addEventListener("click", () => {
-  ContadorResta(contadorPersona);
+  ContadorResta(contador);
   Refresh();
 });
 
 const Refresh = () => {
-  h1.innerText = contadorPersona.veces;
+  h1.innerText = contador.veces;
 };
-
-function Contador(value) {
-  value.veces++;
-}
-
-function ContadorResta(value) {
-  value.veces--;
-}
