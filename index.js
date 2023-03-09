@@ -3,6 +3,7 @@ import { btnMas, btnMenos, h1 } from "./elements_html.js";
 import { contador } from "./objetos.js";
 
 //pasa los parametros de las funcines por value
+let hola = "hola"; //scope global
 
 btnMas.addEventListener("click", () => {
   Contador(contador);
